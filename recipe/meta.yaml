@@ -40,12 +40,10 @@ requirements:
     - {{posix}}automake
     - {{posix}}pkg-config
     - {{posix}}make
-    - zeromq
 
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
-    - zeromq
 
 test:
   commands:
