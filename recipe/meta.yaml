@@ -47,12 +47,14 @@ requirements:
 
   host:
     - r-base
-    - {{native}}zeromq 4.2.*
+    - {{native}}zeromq 4.2.*     # [not win]
+    - {{native}}zeromq 4.1.*     # [win]
 
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
-    - {{native}}zeromq 4.2.*
+    - {{native}}zeromq 4.2.*     # [not win]
+    - {{native}}zeromq 4.1.*     # [win]
 
 test:
   commands:
