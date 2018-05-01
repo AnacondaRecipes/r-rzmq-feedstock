@@ -14,22 +14,15 @@ source:
     - {{ cran_mirror }}/src/contrib/Archive/rzmq/rzmq_{{ version }}.tar.gz
   sha256: ab6f6da1fcd0c11003517a21bd85f5c56495e6926542db3fb320f3901f292b13
 
-
-  # patches:
-   # List any patch files here
-   # - fix.patch
-
 build:
   merge_build_host: True  # [win]
   # If this is a new build for the same version, increment the build number.
   number: 1
 
-
   # This is required to make R link correctly on Linux.
   rpaths:
     - lib/R/lib/
     - lib/
-
 
 requirements:
   build:
