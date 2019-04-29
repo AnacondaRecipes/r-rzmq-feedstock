@@ -1,4 +1,4 @@
-{% set version = '0.9.3' %}
+{% set version = '0.9.6' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -11,12 +11,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rzmq_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rzmq/rzmq_{{ version }}.tar.gz
-  sha256: ab6f6da1fcd0c11003517a21bd85f5c56495e6926542db3fb320f3901f292b13
+  sha256: 80a3fc6eb6f7851224c4cd5e219ca4db0286551ad429359d4df853ccb9234316
 
 build:
   merge_build_host: True  # [win]
   # If this is a new build for the same version, increment the build number.
-  number: 1
+  number: 0
 
   # This is required to make R link correctly on Linux.
   rpaths:
@@ -68,6 +68,7 @@ about:
   summary: Interface to the 'ZeroMQ' lightweight messaging kernel (see <http://www.zeromq.org/>
     for more information).
   license_family: GPL3
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
 
 extra:
   recipe-maintainers:
@@ -78,20 +79,20 @@ extra:
 
 # Package: rzmq
 # Title: R Bindings for 'ZeroMQ'
-# Version: 0.9.3
-# Authors@R: c( person("Whit", "Armstrong", , "armstrong.whit@gmail.com", role = "aut"), person("Jeroen", "Ooms", , "jeroen@berkeley.edu", role = c("aut", "cre")))
+# Version: 0.9.6
+# Authors@R: c( person("Whit", "Armstrong", , "armstrong.whit@gmail.com", role = "aut"), person("Michael", "Schubert", role = "ctb"), person("Jeroen", "Ooms", , "jeroen@berkeley.edu", role = c("aut", "cre")))
 # Description: Interface to the 'ZeroMQ' lightweight messaging kernel (see <http://www.zeromq.org/> for more information).
 # License: GPL-3
 # Depends: R (>= 3.1.0)
-# SystemRequirements: ZeroMQ >= 3.0.0: libzmq3-dev (deb) or zeromq3-devel (rpm)
+# SystemRequirements: ZeroMQ >= 3.0.0: libzmq3-dev (deb) or zeromq-devel (rpm)
 # URL: http://github.com/ropensci/rzmq#readme (devel) http://www.zeromq.org (upstream)
 # BugReports: http://github.com/ropensci/rzmq/issues
 # NeedsCompilation: yes
-# Packaged: 2017-10-01 20:43:27 UTC; jeroen
-# Author: Whit Armstrong [aut], Jeroen Ooms [aut, cre]
+# Packaged: 2019-03-01 17:07:50 UTC; jeroen
+# Author: Whit Armstrong [aut], Michael Schubert [ctb], Jeroen Ooms [aut, cre]
 # Maintainer: Jeroen Ooms <jeroen@berkeley.edu>
 # Repository: CRAN
-# Date/Publication: 2017-10-02 07:29:15 UTC
+# Date/Publication: 2019-03-01 21:50:09 UTC
 
 # See
 # http://docs.continuum.io/conda/build.html for
